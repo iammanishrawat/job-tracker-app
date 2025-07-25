@@ -13,7 +13,7 @@ const DashboardLayout = () => {
           sidebarOpen ? 'ml-64' : 'ml-0'
         }`}
       >
-        <main className="p-4 overflow-y-auto">
+        <main className="overflow-y-auto">
           <NavbarComponent toggleSidebar={() => setSidebarOpen(!sidebarOpen)} />
           <Outlet />
         </main>

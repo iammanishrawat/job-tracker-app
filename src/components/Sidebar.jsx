@@ -22,12 +22,22 @@ const SidebarComponent = ({ isOpen }) => {
         </li>
         <li>
           <Link
-            to="/about"
+            to="/all-jobs"
             className={`block p-2 rounded ${
-              location.pathname === '/about' ? 'bg-blue-200' : ''
+              location.pathname === '/all-jobs' ? 'bg-blue-200' : ''
             }`}
           >
-            About
+            Job Lists
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="/add-job"
+            className={`block p-2 rounded ${
+              location.pathname === '/add-job' ? 'bg-blue-200' : ''
+            }`}
+          >
+            Create Job
           </Link>
         </li>
       </ul>
