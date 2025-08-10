@@ -1,4 +1,4 @@
-const jobs = [
+const jobsList = [
     {
         id: 1,
         title: "Frontend Developer",
@@ -15,4 +15,4 @@ const jobs = [
     },
 ];
 
-export default jobs;
+export default jobsList;
