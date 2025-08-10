@@ -1,19 +1,21 @@
-import { useState } from 'react'
-import jobsList from '../data/jobsList'
+// Jobs.jsx
+import React, { useState } from 'react'
+import jobsData from '../data/jobsData'
+import JobList from '../pages/jobsList'
 import AddJob from '../pages/AddJob'
-import AllJobs from '../pages/AllJobs'
 
-const Jobs = () => {
-  const [jobListData, setJobListData] = useState(jobsList)
+function Jobs() {
+  const [allJobs, setAllJobs] = useState(jobsData)
+
   const addJob = (newJob) => {
-    let existingJobs = [...jobListData, newJob]
-    setJobListData(existingJobs)
+    setAllJobs((prevJobs) => [...prevJobs, newJob])
   }
+
   return (
-    <>
-      <AllJobs allJobs={jobListData} />
+    <div>
+      <JobList allJobs={allJobs} />
       <AddJob addJob={addJob} />
-    </>
+    </div>
   )
 }
 

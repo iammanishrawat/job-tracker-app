@@ -1,0 +1,8 @@
+// jobsData.js
+const jobsData = [
+  { id: 1, title: "Frontend Developer", company: "TechCorp" },
+  { id: 2, title: "Backend Developer", company: "CodeWorks" },
+  { id: 3, title: "UI Designer", company: "PixelCraft" }
+];
+
+export default jobsData;

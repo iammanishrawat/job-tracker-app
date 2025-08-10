@@ -1,46 +1,42 @@
-const AddJob = () => {
+// AddJob.jsx
+import React, { useState } from 'react'
+
+function AddJob({ addJob }) {
+  const [title, setTitle] = useState('')
+  const [company, setCompany] = useState('')
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if (!title || !company) return
+
+    const newJob = {
+      id: Date.now(),
+      title,
+      company,
+    }
+
+    addJob(newJob) // Call parent function
+    setTitle('')
+    setCompany('')
+  }
+
   return (
-    <div className="p-6 max-w-2xl mx-auto">
-      <h2 className="text-2xl font-bold mb-6">Add New Job</h2>
-      <form className="space-y-4" onSubmit={AddJob}>
-        <div>
-          <label className="block font-medium mb-1">Job Title</label>
-          <input
-            type="text"
-            className="w-full border px-3 py-2 rounded"
-            placeholder="e.g. Frontend Developer"
-          />
-        </div>
-        <div>
-          <label className="block font-medium mb-1">Company Name</label>
-          <input
-            type="text"
-            className="w-full border px-3 py-2 rounded"
-            placeholder="e.g. Google"
-          />
-        </div>
-        <div>
-          <label className="block font-medium mb-1">Job Location</label>
-          <input
-            type="text"
-            className="w-full border px-3 py-2 rounded"
-            placeholder="e.g. Remote / Bangalore"
-          />
-        </div>
-        <div>
-          <label className="block font-medium mb-1">Status</label>
-          <select className="w-full border px-3 py-2 rounded">
-            <option>Pending</option>
-            <option>Interview</option>
-            <option>Declined</option>
-          </select>
-        </div>
-        <button
-          type="submit"
-          className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700"
-        >
-          Add Job
-        </button>
+    <div>
+      <h2>Add Job</h2>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Job Title"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Company Name"
+          value={company}
+          onChange={(e) => setCompany(e.target.value)}
+        />
+        <button type="submit">Add Job</button>
       </form>
     </div>
   )
