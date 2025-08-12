@@ -1,7 +1,8 @@
 import { useState } from 'react'
-import jobsList from '../data/jobsList'
 import AddJob from '../pages/AddJob'
 import AllJobs from '../pages/AllJobs'
+import jobsList from '../data/jobsList'
+
 
 const Jobs = () => {
   const [jobListData, setJobListData] = useState(jobsList)
