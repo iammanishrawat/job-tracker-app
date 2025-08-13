@@ -3,10 +3,10 @@ import Jobs from './components/Jobs'
 
 function App() {
   return (
-    <div>
-      <h1>Job Management</h1>
+    <>
+      <h1>Job Tracker App</h1>
       <Jobs />
-    </div>
+    </>
   )
 }
 
