@@ -1,5 +1,5 @@
-import JobList from "../pages/jobsList"
-import AddJob from "../pages/AddJob"
+import JobList from '../pages/jobsList'
+import AddJob from '../pages/AddJob'
 
 function Jobs() {
   return (

@@ -1,24 +1,20 @@
-import { useState } from "react"
-import allJobsData from "../data/allJobsData"
-
+import { useState } from 'react'
+import allJobsData from '../data/allJobsData'
 
 function JobList() {
   const [jobsData, setJobsData] = useState(allJobsData)
-  return (    
+  return (
     <>
       {/* yha se job listing map hogi or jitni data mein jobs hogi utni dikhegi */}
       <ul>
-        {
-          jobsData.map((jobs) => {
-            return(
-              <li
-              key={jobs.id}>
-                Title: <span>{jobs.title}</span>,
-                Company: <span>{jobs.company}</span>
-              </li>
-            )
-          })
-        }
+        {jobsData.map((jobs) => {
+          return (
+            <li key={jobs.id}>
+              Title: <span>{jobs.title}</span>, Company:{' '}
+              <span>{jobs.company}</span>
+            </li>
+          )
+        })}
       </ul>
     </>
   )
