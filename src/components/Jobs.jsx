@@ -1,10 +1,9 @@
-import JobList from '../pages/jobsList'
 import AddJob from '../pages/AddJob'
+import JobList from '../pages/jobsList'
 
 function Jobs() {
   return (
     <>
-      {/* yha se old job list aayegi jiske sath add job wala form aayega or phir new fresh list show hogi */}
       <JobList />
       <AddJob />
     </>

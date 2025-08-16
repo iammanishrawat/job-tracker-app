@@ -11,7 +11,7 @@
 
 }
 
-h1,
+/* h1,
 h2,
 h3,
 h4,
@@ -19,7 +19,7 @@ h5,
 h6,
 p {
     margin: 0;
-}
+} */
 
 h1 {
     font-size: 2rem;
@@ -44,4 +44,20 @@ h4 {
 h5 {
     font-size: 1.154rem;
     font-weight: 600;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.card {
+    background-color: #e2e2e2;
+    padding: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.554rem;
 }
