@@ -5,6 +5,10 @@ import { useEffect, useState } from 'react'
 function Jobs() {
   const [jobData, setJobData] = useState([])
   useEffect(() => {
+    getJobs()
+  }, [])
+
+  const getJobs = () => {
     fetch('https://fakestoreapi.com/products')
       .then((res) => res.json())
       .then((data) => {
@@ -13,10 +17,10 @@ function Jobs() {
       .catch((error) => {
         alert('no data found', error)
       })
-  }, [])
+  }
   return (
     <>
-      <AddJob />
+      <AddJob getJobs={getJobs} />
       <br />
       <JobList jobData={jobData} />
     </>
