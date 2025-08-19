@@ -2,13 +2,12 @@ function JobList({ jobData }) {
   return (
     <>
       <div className="cards-grid">
-        {jobData.map((job) => {
+        {jobData.map((product) => {
           return (
             <div className="card">
-              <h5>Job: {job.name}</h5>
-              <h6>Job Description: {job.username}</h6>
-              <h6>Company Name: {job.email}</h6>
-              <h6>Location: {job.address.city}</h6>
+              <h5>Product: {product.title}</h5>
+              <h6>Description: {product.description}</h6>
+              <h6>Category: {product.category}</h6>
             </div>
           )
         })}

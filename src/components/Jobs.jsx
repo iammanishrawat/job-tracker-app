@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 function Jobs() {
   const [jobData, setJobData] = useState([])
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/users')
+    fetch('https://fakestoreapi.com/products')
       .then((res) => res.json())
       .then((data) => {
         setJobData(data)
@@ -17,6 +17,7 @@ function Jobs() {
   return (
     <>
       <AddJob />
+      <br />
       <JobList jobData={jobData} />
     </>
   )
