@@ -87,3 +87,16 @@ h5 {
     background-color: #292929;
     color: #ffffff;
 }
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+
+.product-list .products {
+    background: #d9d9d9;
+    padding: 10px;
+    border-radius: 10px;
+}
