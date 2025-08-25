@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import ProductList from '../pages/ProductList'
 
 const Products = () => {
   const [productListData, setProductListData] = useState([])
@@ -12,7 +13,11 @@ const Products = () => {
         alert('data not found')
       })
   }, [])
-  return <div>Products</div>
+  return (
+    <>
+      <ProductList productListData={productListData} />
+    </>
+  )
 }
 
 export default Products
