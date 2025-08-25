@@ -100,3 +100,23 @@ h5 {
     padding: 10px;
     border-radius: 10px;
 }
+
+form {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+form input,
+form textarea {
+    height: 50px;
+    border: 1px solid;
+    padding: 5px;
+}
+
+form button {
+    height: 50px;
+    border: 1px solid;
+    width: 20%;
+    cursor: pointer;
+}
