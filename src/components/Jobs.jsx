@@ -1,3 +1,4 @@
+import AddJob from '../pages/AddJob'
 import JobsList from '../pages/JobsList'
 import { useEffect, useState } from 'react'
 const Jobs = (jobData) => {
@@ -14,7 +15,8 @@ const Jobs = (jobData) => {
   }, [])
   return (
     <>
-      <h1 className="mb-5">Jobs</h1>
+      <h1 className="mb-5">Add New Jobs</h1>
+      <AddJob />
       <JobsList jobData={jobListData} />
     </>
   )
