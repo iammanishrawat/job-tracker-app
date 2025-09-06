@@ -1,21 +1,8 @@
-import { useEffect, useState } from 'react'
-
-const JobsList = () => {
-  const [jobListData, setJobListData] = useState([])
-  useEffect(() => {
-    fetch('https://jsonfakery.com/jobs')
-      .then((res) => res.json())
-      .then((data) => {
-        setJobListData(data)
-      })
-      .catch(() => {
-        alert('Data Not found')
-      })
-  }, [])
+const JobsList = ({ jobData }) => {
   return (
     <>
       <div className="cards-grid">
-        {jobListData.map((jobs) => {
+        {jobData.map((jobs) => {
           return (
             <div className="card" key={jobs.id}>
               <h2>Job Title: {jobs.title}</h2>
