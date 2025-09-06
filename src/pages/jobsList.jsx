@@ -17,7 +17,7 @@ const JobsList = () => {
       <div className="cards-grid">
         {jobListData.map((jobs) => {
           return (
-            <div className="card" id={jobs.id}>
+            <div className="card" key={jobs.id}>
               <h2>Job Title: {jobs.title}</h2>
               <p>Job Description: {jobs.description}</p>
               <p>Job Location: {jobs.location}</p>
