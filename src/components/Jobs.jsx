@@ -16,7 +16,7 @@ const Jobs = (jobData) => {
   return (
     <>
       <h1 className="mb-5">Add New Jobs</h1>
-      <AddJob />
+      <AddJob addJob={addJob} />
       <JobsList jobData={jobListData} />
     </>
   )
