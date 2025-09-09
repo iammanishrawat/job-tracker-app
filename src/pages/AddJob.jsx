@@ -1,12 +1,29 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
-const AddJob = () => {
+const AddJob = ({ newAddJob }) => {
   const [jobTitle, setJobTitle] = useState()
   const [companyName, setCompanyName] = useState()
   const [jobLocation, setJobLocation] = useState()
   const [salary, setSalary] = useState()
   const submitFormHandler = (e) => {
     e.preventDefault()
+    fetch('http://localhost:3000/jobs', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        title: 'Frontend Developer',
+        company: 'OpenAI',
+        location: 'Remote',
+        salary: '10-15 LPA',
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log('Job created:', data)
+      })
+      .catch((err) => console.error('Error:', err))
   }
   return (
     <>

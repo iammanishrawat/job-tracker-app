@@ -13,14 +13,19 @@ const Jobs = () => {
         alert(`no data found`)
       })
   }
+  const newAddJob = () => {
+    newAddJob([...jobListData, AddJob])
+  }
   useEffect(() => {
     fetchJobList()
   }, [])
   return (
     <>
-      <h1>Jobs</h1>
-      <AddJob />
-      <JobsList jobListData={jobListData} />
+      <div className="p-6">
+        <h1>Jobs</h1>
+        <AddJob newAddJob />
+        <JobsList jobListData={jobListData} />
+      </div>
     </>
   )
 }
