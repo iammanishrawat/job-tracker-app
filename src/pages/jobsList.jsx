@@ -1,20 +1,20 @@
-import { useEffect, useState } from 'react'
+// import { useEffect, useState } from 'react'
 
-const JobsList = () => {
-  const [jobListData, setJobListData] = useState([])
-  const fetchJobList = () => {
-    fetch('http://localhost:3000/jobs')
-      .then((res) => res.json())
-      .then((data) => {
-        setJobListData(data)
-      })
-      .catch(() => {
-        alert(`no data found`)
-      })
-  }
-  useEffect(() => {
-    fetchJobList()
-  }, [])
+const JobsList = ({ jobListData }) => {
+  //   const [jobListData, setJobListData] = useState([])
+  //   const fetchJobList = () => {
+  //     fetch('http://localhost:3000/jobs')
+  //       .then((res) => res.json())
+  //       .then((data) => {
+  //         setJobListData(data)
+  //       })
+  //       .catch(() => {
+  //         alert(`no data found`)
+  //       })
+  //   }
+  //   useEffect(() => {
+  //     fetchJobList()
+  //   }, [])
   return (
     <>
       <h1>Jobs</h1>
