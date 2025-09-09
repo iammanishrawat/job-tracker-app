@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
-import JobsList from '../pages/JobsList'
+import JobsList from '../pages/jobsList'
+import AddJob from '../pages/AddJob'
 const Jobs = () => {
   const [jobListData, setJobListData] = useState([])
   const fetchJobList = () => {
@@ -17,6 +18,8 @@ const Jobs = () => {
   }, [])
   return (
     <>
+      <h1>Jobs</h1>
+      <AddJob />
       <JobsList jobListData={jobListData} />
     </>
   )
