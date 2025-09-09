@@ -23,7 +23,7 @@ const Jobs = () => {
     <>
       <div className="p-6">
         <h1>Jobs</h1>
-        <AddJob newAddJob />
+        <AddJob fetchNewJob={fetchJobList} />
         <JobsList jobListData={jobListData} />
       </div>
     </>

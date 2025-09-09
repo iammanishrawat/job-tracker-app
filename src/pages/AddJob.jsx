@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-const AddJob = ({ newAddJob }) => {
+const AddJob = ({ fetchNewJob }) => {
   const [jobTitle, setJobTitle] = useState()
   const [companyName, setCompanyName] = useState()
   const [jobLocation, setJobLocation] = useState()
@@ -22,6 +22,7 @@ const AddJob = ({ newAddJob }) => {
       .then((res) => res.json())
       .then((data) => {
         console.log('Job created:', data)
+        fetchNewJob()
       })
       .catch((err) => console.error('Error:', err))
   }
