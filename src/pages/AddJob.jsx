@@ -13,10 +13,10 @@ const AddJob = ({ newAddJob }) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        title: 'Frontend Developer',
-        company: 'OpenAI',
-        location: 'Remote',
-        salary: '10-15 LPA',
+        title: jobTitle,
+        company: companyName,
+        location: jobLocation,
+        salary: salary,
       }),
     })
       .then((res) => res.json())

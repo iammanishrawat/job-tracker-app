@@ -14,7 +14,7 @@ const Jobs = () => {
       })
   }
   const newAddJob = () => {
-    newAddJob([...jobListData, AddJob])
+    newAddJob([...JobsList, AddJob])
   }
   useEffect(() => {
     fetchJobList()
