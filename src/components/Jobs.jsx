@@ -13,9 +13,6 @@ const Jobs = () => {
         alert(`no data found`)
       })
   }
-  const newAddJob = () => {
-    newAddJob([...JobsList, AddJob])
-  }
   useEffect(() => {
     fetchJobList()
   }, [])

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 const AddJob = ({ fetchNewJob }) => {
   const [jobTitle, setJobTitle] = useState()
@@ -7,9 +7,7 @@ const AddJob = ({ fetchNewJob }) => {
   const [salary, setSalary] = useState()
   const submitFormHandler = (e) => {
     e.preventDefault()
-  }
 
-  const fetchNewAddData = () => {
     fetch('http://localhost:3000/jobs', {
       method: 'POST',
       headers: {
@@ -29,9 +27,6 @@ const AddJob = ({ fetchNewJob }) => {
       })
       .catch((err) => console.error('Error:', err))
   }
-  useEffect(() => {
-    fetchNewAddData()
-  }, [])
   return (
     <>
       <form action="" onSubmit={submitFormHandler}>
