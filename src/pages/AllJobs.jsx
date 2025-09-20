@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 const AllJobs = () => {
   const [allJobListData, setAllJobListData] = useState([])
+
   useEffect(() => {
     fetch('http://localhost:3000/jobs')
       .then((res) => res.json())
