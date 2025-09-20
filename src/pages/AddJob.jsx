@@ -2,10 +2,10 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const AddJob = () => {
-  const [titleInput, setTitleInput] = useState()
-  const [companyNameInput, setCompanyNameInput] = useState()
-  const [jobLocationInput, setJobLocationInput] = useState()
-  const [salaryInput, setSalaryInput] = useState()
+  const [titleInput, setTitleInput] = useState('')
+  const [companyNameInput, setCompanyNameInput] = useState('')
+  const [jobLocationInput, setJobLocationInput] = useState('')
+  const [salaryInput, setSalaryInput] = useState('')
   const navigate = useNavigate()
   const formSubmitHandler = (e) => {
     e.preventDefault()
@@ -21,15 +21,15 @@ const AddJob = () => {
         salary: salaryInput,
       }),
     })
-      .then((res) => res.json())
+      .then((response) => response.json())
       .then((data) => {
         console.log(data)
         navigate('/all-jobs')
       })
-      .catch(`No input`)
+      .catch((err) => console.error('No input', err))
   }
   return (
-    <div className="p-6 max-w-2xl mx-auto">
+    <div className="mt-[100px] max-w-2xl mx-auto">
       <h2 className="text-2xl font-bold mb-6">Add New Job</h2>
       <form className="space-y-4" onSubmit={formSubmitHandler}>
         <div>
