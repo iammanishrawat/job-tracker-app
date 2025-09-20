@@ -1,6 +1,6 @@
 const NavbarComponent = ({ toggleSidebar }) => {
   return (
-    <nav className="bg-gray-800 text-white p-4 flex items-center">
+    <nav className="bg-gray-800 text-white p-4 flex items-center fixed top-0 w-full">
       <button onClick={toggleSidebar} className="mr-4">
         ☰
       </button>

@@ -27,7 +27,7 @@ const SidebarComponent = ({ isOpen }) => {
               location.pathname === '/all-jobs' ? 'bg-blue-200' : ''
             }`}
           >
-            Job Lists
+            All Job Lists
           </Link>
         </li>
         <li>
@@ -37,7 +37,7 @@ const SidebarComponent = ({ isOpen }) => {
               location.pathname === '/add-job' ? 'bg-blue-200' : ''
             }`}
           >
-            Create Job
+            Add Job
           </Link>
         </li>
       </ul>

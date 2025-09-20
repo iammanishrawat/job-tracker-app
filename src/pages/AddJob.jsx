@@ -28,12 +28,12 @@ const AddJob = () => {
           />
         </div>
         <div>
-          <label className="block font-medium mb-1">Status</label>
-          <select className="w-full border px-3 py-2 rounded">
-            <option>Pending</option>
-            <option>Interview</option>
-            <option>Declined</option>
-          </select>
+          <label className="block font-medium mb-1">Salary</label>
+          <input
+            type="text"
+            className="w-full border px-3 py-2 rounded"
+            placeholder="e.g. 50,000 INR"
+          />
         </div>
         <button
           type="submit"
