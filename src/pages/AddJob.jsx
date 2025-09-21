@@ -24,6 +24,7 @@ const AddJob = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log(data)
+        // fetchJobData()
         navigate('/all-jobs')
       })
       .catch((err) => console.error('No input', err))
