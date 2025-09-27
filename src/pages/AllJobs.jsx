@@ -11,6 +11,17 @@ const AllJobs = () => {
       })
       .catch((err) => console.error('No Data Found', err))
   }
+  const deleteJobCard = (id) => {
+    fetch(`http://localhost:3000/jobs/${id}`, {
+      method: 'DELETE',
+    })
+      .then(() => {
+        console.log(`Job ${id} deleted`)
+        fetchJobData()
+      })
+      .catch((err) => console.error('Delete failed', err))
+  }
+
   useEffect(() => {
     fetchJobData()
   }, [])
@@ -37,6 +48,27 @@ const AllJobs = () => {
                 <p>Company: {job.company}</p>
                 <p>Location: {job.location}</p>
                 <p>Salary: {job.salary}</p>
+                <div className="action-button flex gap-2">
+                  <button
+                    type="button"
+                    className="button text-green-500 cursor-pointer"
+                  >
+                    View
+                  </button>
+                  <button
+                    type="button"
+                    className="button btn-primary text-yellow-500 cursor-pointer"
+                  >
+                    Edit
+                  </button>
+                  <button
+                    type="button"
+                    className="button btn-primary text-red-500 cursor-pointer"
+                    onClick={() => deleteJobCard(job.id)}
+                  >
+                    Delete
+                  </button>
+                </div>
               </div>
             </>
           )

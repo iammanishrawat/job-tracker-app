@@ -21,7 +21,6 @@ const AddJobModal = ({ onClose, onAdded }) => {
       .then((response) => response.json())
       .then((data) => {
         console.log(data)
-        // fetchJobData()
         onAdded()
       })
       .catch((err) => console.error('No input', err))
