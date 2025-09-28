@@ -15,12 +15,13 @@ const AllJobs = () => {
       .catch((err) => console.error('No Data Found', err))
   }
   const deleteJobCard = (id) => {
+    const shouldDelete = confirm('Do you want to delete')
+    if (!shouldDelete) return
     fetch(`http://localhost:3000/jobs/${id}`, {
       method: 'DELETE',
     })
       .then(() => {
         console.log(`Job ${id} deleted`)
-        prompt('Do you want to delete')
         fetchJobData()
       })
       .catch((err) => console.error('Delete failed', err))
