@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react'
 import AddJobModal from '../components/AddJobModal'
+import ViewJobModal from '../components/ViewJobModal'
 const AllJobs = () => {
   const [allJobListData, setAllJobListData] = useState([])
-  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isAddJobModalOpen, setIsAddJobModalOpen] = useState(false)
+  const [isViewJobModal, setIsViewJobModal] = useState(false)
+
   const fetchJobData = () => {
     fetch('http://localhost:3000/jobs')
       .then((response) => response.json())
@@ -17,6 +20,7 @@ const AllJobs = () => {
     })
       .then(() => {
         console.log(`Job ${id} deleted`)
+        prompt('Do you want to delete')
         fetchJobData()
       })
       .catch((err) => console.error('Delete failed', err))
@@ -34,7 +38,7 @@ const AllJobs = () => {
           className="bg-amber-400 cursor-pointer"
           data-modal-target="default-modal"
           data-modal-toggle="default-modal"
-          onClick={() => setIsModalOpen(true)}
+          onClick={() => setIsAddJobModalOpen(true)}
         >
           Add New Job
         </button>
@@ -52,6 +56,7 @@ const AllJobs = () => {
                   <button
                     type="button"
                     className="button text-green-500 cursor-pointer"
+                    onClick={() => setIsViewJobModal(job)}
                   >
                     View
                   </button>
@@ -75,13 +80,20 @@ const AllJobs = () => {
         })}
       </div>
       {/* Render modal when open */}
-      {isModalOpen && (
+      {isAddJobModalOpen && (
         <AddJobModal
-          onClose={() => setIsModalOpen(false)}
+          onClose={() => setIsAddJobModalOpen(false)}
           onAdded={() => {
-            setIsModalOpen(false)
+            setIsAddJobModalOpen(false)
             fetchJobData()
           }}
+        />
+      )}
+
+      {isViewJobModal && (
+        <ViewJobModal
+          job={isViewJobModal}
+          onClose={() => setIsViewJobModal(false)}
         />
       )}
     </div>
